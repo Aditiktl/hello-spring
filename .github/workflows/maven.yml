@@ -34,7 +34,9 @@ jobs:
         dockerfile: Dockerfile
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-    - uses: anchore/scan-action@v3
+        
+    - name: Scan Image
+      uses: anchore/scan-action@v3
       with:
         image: "aditipatil22/springboot-image-new"
         fail-build: false
