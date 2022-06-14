@@ -38,5 +38,6 @@ jobs:
     - name: Scan image
       uses: anchore/scan-action@v3
       with:
-        image: "aditipatil22/springboot-image-new:latest"
+        image: "localbuild/testimage:latest"
+        fail-build: false
       
