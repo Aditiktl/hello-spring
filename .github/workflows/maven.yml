@@ -26,6 +26,12 @@ jobs:
            mvn -B package --file pom.xml
     - name: Test with Maven
       run: mvn -B test --file pom.xml  
+      
+    - name: Publish Test Results
+      uses: EnricoMi/publish-unit-test-result-action@v1
+      if: always()
+      with:
+        files: "test-results/**/*.xml"
        
     - name: Build and push docker image
       uses: mr-smithers-excellent/docker-build-push@v5
